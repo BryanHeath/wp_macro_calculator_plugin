@@ -109,6 +109,8 @@ class wp_macro_calculator_plugin {
 			$this->admin = new wp_macro_calculator_plugin_Admin_API();
 		}
 
+		add_shortcode('macro_calculator', [$this, 'shortcode']);
+
 		// Handle localisation
 		$this->load_plugin_textdomain();
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
@@ -260,6 +262,7 @@ class wp_macro_calculator_plugin {
 	 */
 	public function install () {
 		$this->_log_version_number();
+		wp_insert_post(["post_title" => "Macro Calculator", 'post_content' => '[macro_calculator]', 'post_type' => 'page', 'post_status' => 'publish']);
 	} // End install ()
 
 	/**
@@ -272,4 +275,19 @@ class wp_macro_calculator_plugin {
 		update_option( $this->_token . '_version', $this->_version );
 	} // End _log_version_number ()
 
+
+	public function shortcode() {
+		ob_start();
+		$this->shortcodeHTML();
+		$this->shortcodePOST();
+		return ob_get_clean();
+	}
+
+	public function shortcodeHTML() {
+		include plugin_dir_path(__FILE__) . '../assets/html/shortcode.html';
+	}
+
+	public function shortcodePOST() {
+
+	}
 }

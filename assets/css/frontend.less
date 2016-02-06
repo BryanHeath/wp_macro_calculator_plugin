@@ -1,0 +1,130 @@
+@blue: #0cd1e5;
+@gray: #4A4A4A;
+
+#macro-calculator {
+  padding: 3%;
+  border: 1px solid #f0f0f0;
+  width: 100%;
+}
+
+#macro-calculator h4 {
+  margin-bottom: 8px;
+}
+
+#macro-calculator .selection {
+  height: 40px;
+  margin-bottom: 1.17647em;
+  white-space: nowrap;
+}
+
+#macro-calculator .selection input[type="radio"] {
+  display: none;
+}
+
+#macro-calculator .selection label {
+  display: inline-block;
+  background-color: @gray;
+  font-size: 2.5vh;
+  color: white;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+#macro-calculator .gender {
+  width: 50%;
+}
+
+#macro-calculator .selection input[type="radio"]:checked + label {
+  background-color: @blue;
+}
+
+#macro-calculator .goals {
+  width: 33.3%;
+}
+
+#macro-calculator #calculate {
+  margin-top: 30px;
+  width: 100%;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+  border-bottom-color: #333;
+  border: 1px solid #61c4ea;
+  background-color: @blue;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: white;
+  font-size: 3.0vh;
+  text-shadow: #b2e2f5 0 1px 0;
+  padding: 10px
+}
+
+#macro-calculator #age, #macro-calculator #weight {
+  width: 25%;
+}
+
+#macro-calculator #inches {
+  width: 30%;
+}
+
+#macro-calculator .div_top {
+  width: 100%;
+  margin-bottom: 120px;
+}
+
+#macro-calculator .div_gender {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#macro-calculator .div_activity {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#macro-calculator .div_goals {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#macro-calculator .total {
+  margin-bottom: 20px;
+}
+
+#macro-calculator .total h3 {
+  display: inline-block;
+  font-size: 30px;
+  margin: 0 12px 0 0;
+}
+
+#macro-calculator .calorie-value {
+  background-color: @blue;
+  border: 1px solid #63656A;
+  border-radius: 10px;
+  display: inline-block;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  padding: 4px 10px;
+  text-align: center;
+}
+
+#macro-calculator .calorie-value .number {
+  font-size: 20px;
+}
+
+#macro-calculator .calorie-value .label {
+  font-size: 14px;
+}
+
+#macro-calculator .div_value {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#macro-calculator .hidden {
+  display: none;
+}

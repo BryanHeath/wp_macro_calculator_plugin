@@ -1,11 +1,11 @@
 <?php
 /*
- * Plugin Name: wp_macro_calculator_plugin
+ * Plugin Name: Macro Calculator
  * Version: 1.0
- * Plugin URI: http://www.hughlashbrooke.com/
- * Description: This is your starter template for your next WordPress plugin.
- * Author: Hugh Lashbrooke
- * Author URI: http://www.hughlashbrooke.com/
+ * Plugin URI: https://github.com/T3chn0crat/wp_macro_calculator_plugin
+ * Description: Macro Plugin
+ * Author: Bryan Heath
+ * Author URI: https://github.com/T3chn0crat/
  * Requires at least: 4.0
  * Tested up to: 4.0
  *
@@ -13,7 +13,7 @@
  * Domain Path: /lang/
  *
  * @package WordPress
- * @author Hugh Lashbrooke
+ * @author Bryan Heath
  * @since 1.0.0
  */
 

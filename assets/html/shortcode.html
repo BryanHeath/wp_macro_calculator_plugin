@@ -1,0 +1,65 @@
+<form id="form-macro-calculator">
+    <div id="macro-calculator">
+        <div class="div_top">
+            <div style="float: left">
+                <h4>Age:</h4>
+                <input type="text" name="age" placeholder="Years" id="age" maxlength="2">
+            </div>
+            <div style="float: left">
+                <h4>Weight:</h4>
+                <input type="text" name="weight" placeholder="lbs" id="weight" maxlength="3">
+            </div>
+            <div style="float: left">
+                <h4>Height:</h4>
+                <input type="text" name="feet" placeholder="inches" id="inches" maxlength="3">
+            </div>
+            <i style="clear: both"></i>
+        </div>
+
+        <div class="div_gender">
+            <h4>Gender:</h4>
+            <div class="selection">
+                <input type="radio" value="m" name="gender" id="gender_m"><label for="gender_m" class="gender">Male</label>
+                <input type="radio" value="f" name="gender" id="gender_f"><label for="gender_f" class="gender">Female</label>
+            </div>
+        </div>
+
+        <div class="div_activity">
+            <h4>Activity Level:</h4>
+            <select id="activity">
+                <option value="1.2">Sedentary</option>
+                <option value="1.375">Light Activity</option>
+                <option value="1.55">Moderately Active</option>
+                <option value="1.725">Very Active</option>
+                <option value="1.9">Extremely Active</option>
+            </select>
+        </div>
+
+        <div class="div_goals">
+            <h4>Goals:</h4>
+            <div class="selection">
+                <input type="radio" value="l" name="goals" id="loose"><label for="loose" class="goals">Loose</label>
+                <input type="radio" value="m" name="goals" id="maintain"><label for="maintain" class="goals">Maintain</label>
+                <input type="radio" value="g" name="goals" id="gain"><label for="gain" class="goals">Gain</label>
+            </div>
+        </div>
+
+        <input type="submit" id="calculate" name="calculate" value="Calculate Macros">
+        <div class="div_value hidden" id="result">
+            <div class="total">
+                <h3>Your BMR is:</h3>
+                <div class="calorie-value">
+                    <div class="number" id="bmr"></div>
+                    <div class="label">Calories/Day</div>
+                </div>
+            </div>
+            <div class="total">
+                <h3>Your TDEE is:</h3>
+                <div class="calorie-value">
+                    <div class="number" id="tdee"></div>
+                    <div class="label">Calories/Day</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

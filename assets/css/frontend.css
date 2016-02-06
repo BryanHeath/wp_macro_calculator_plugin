@@ -61,6 +61,8 @@
 #macro-calculator .div_top {
   width: 100%;
   margin-bottom: 120px;
+  display: inline-block;
+  overflow: hidden;
 }
 #macro-calculator .div_gender {
   width: 100%;
@@ -104,4 +106,9 @@
 }
 #macro-calculator .hidden {
   display: none;
+}
+#macro-calculator macro-input {
+  float: left;
+  width: 21%;
+  margin: 2%;
 }

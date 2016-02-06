@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Macro Calculator
- * Version: 1.0
+ * Version: 1.0.1
  * Plugin URI: https://github.com/T3chn0crat/wp_macro_calculator_plugin
  * Description: Macro Plugin
  * Author: Bryan Heath

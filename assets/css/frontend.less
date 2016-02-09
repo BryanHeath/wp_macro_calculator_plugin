@@ -8,9 +8,42 @@
 }
 
 #macro-calculator h4 {
-  margin-bottom: 8px;
+  margin-bottom: .5em;
 }
 
+//Main DIVs
+#macro-calculator .div_top {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  margin-bottom: 3em;
+}
+
+#macro-calculator .div_gender {
+  width: 100%;
+  margin-bottom: 3em;
+}
+
+#macro-calculator .div_activity {
+  width: 100%;
+  margin-bottom: 3em;
+}
+
+#macro-calculator .div_goals {
+  width: 100%;
+  margin-bottom: 3em;
+}
+
+//Age, weight, height
+#macro-calculator .macro-input {
+  float: left;
+  padding: .5em .25em;
+}
+#macro-calculator .macro-input input {
+  width: 100%;
+}
+
+//Gender & goals selector
 #macro-calculator .selection {
   height: 40px;
   margin-bottom: 1.17647em;
@@ -33,18 +66,21 @@
   cursor: pointer;
 }
 
-#macro-calculator .gender {
-  width: 50%;
-}
-
 #macro-calculator .selection input[type="radio"]:checked + label {
   background-color: @blue;
 }
 
+//Gender
+#macro-calculator .gender {
+  width: 50%;
+}
+
+//Goals
 #macro-calculator .goals {
   width: 33.3%;
 }
 
+//Calc button
 #macro-calculator #calculate {
   margin-top: 30px;
   width: 100%;
@@ -63,35 +99,7 @@
   padding: 10px
 }
 
-#macro-calculator #age, #macro-calculator #weight {
-  width: 25%;
-}
-
-#macro-calculator #inches {
-  width: 30%;
-}
-
-#macro-calculator .div_top {
-  width: 100%;
-  display: inline-block;
-  overflow: hidden;
-}
-
-#macro-calculator .div_gender {
-  width: 100%;
-  margin-bottom: 50px;
-}
-
-#macro-calculator .div_activity {
-  width: 100%;
-  margin-bottom: 50px;
-}
-
-#macro-calculator .div_goals {
-  width: 100%;
-  margin-bottom: 50px;
-}
-
+//Totals
 #macro-calculator .total {
   margin-bottom: 20px;
 }
@@ -128,10 +136,4 @@
 
 #macro-calculator .hidden {
   display: none;
-}
-
-#macro-calculator .macro-input {
-  float: left;
-  width: 21%;
-  margin: 2%
 }

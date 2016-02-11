@@ -1,65 +1,157 @@
-<form id="form-macro-calculator">
-    <div id="macro-calculator">
-        <div class="div_top">
-            <div class="macro-input">
-                <h4>Age:</h4>
-                <input type="text" name="age" placeholder="Years" id="age" maxlength="2">
-            </div>
-            <div class="macro-input">
-                <h4>Weight:</h4>
-                <input type="text" name="weight" placeholder="lbs" id="weight" maxlength="3">
-            </div>
-            <div class="macro-input">
-                <h4>Height:</h4>
-                <input type="text" name="feet" placeholder="inches" id="inches" maxlength="3">
-            </div>
-            <i style="clear: both"></i>
+<div id="macro-calculator">
+    <div class="title">
+        <h3>Step 1: Calculate Your Calorie Requirements (TDEE)</h3>
+    </div>
+    <div class="div_section div_top">
+        <div class="macro_input">
+            <h4>Age:</h4>
+            <input type="text" name="age" placeholder="Years" id="age" maxlength="2">
         </div>
+        <div class="macro_input">
+            <h4>Weight:</h4>
+            <input type="text" name="weight" placeholder="lbs" id="weight" maxlength="3">
+        </div>
+        <div class="macro_input">
+            <h4>Height:</h4>
+            <input type="text" name="feet" placeholder="inches" id="inches" maxlength="3">
+        </div>
+        <i style="clear: both"></i>
+    </div>
 
-        <div class="div_gender">
-            <h4>Gender:</h4>
-            <div class="selection">
-                <input type="radio" value="m" name="gender" id="gender_m"><label for="gender_m" class="gender">Male</label>
-                <input type="radio" value="f" name="gender" id="gender_f"><label for="gender_f" class="gender">Female</label>
+    <div class="div_section div_gender">
+        <h4>Gender:</h4>
+        <div class="selection">
+            <input type="radio" value="m" name="gender" id="gender_m"><label for="gender_m" class="gender">Male</label>
+            <input type="radio" value="f" name="gender" id="gender_f"><label for="gender_f" class="gender">Female</label>
+        </div>
+    </div>
+
+    <div class="div_section div_activity">
+        <h4>Activity Level:</h4>
+        <select id="activity">
+            <option value="1.2">Sedentary</option>
+            <option value="1.375">Light Activity</option>
+            <option value="1.55">Moderately Active</option>
+            <option value="1.725">Very Active</option>
+            <option value="1.9">Extremely Active</option>
+        </select>
+    </div>
+
+    <input type="submit" id="calculate_tdee" class="calculate" name="calculate" value="Calculate TDEE">
+
+    <div class="div_value hidden" id="result">
+        <div class="total">
+            <h3>Your BMR is:</h3>
+            <div class="calorie-value">
+                <div class="number" id="bmr"></div>
+                <div class="label">Calories/Day</div>
             </div>
         </div>
-
-        <div class="div_activity">
-            <h4>Activity Level:</h4>
-            <select id="activity">
-                <option value="1.2">Sedentary</option>
-                <option value="1.375">Light Activity</option>
-                <option value="1.55">Moderately Active</option>
-                <option value="1.725">Very Active</option>
-                <option value="1.9">Extremely Active</option>
-            </select>
-        </div>
-
-        <div class="div_goals">
-            <h4>Goals:</h4>
-            <div class="selection">
-                <input type="radio" value="l" name="goals" id="loose"><label for="loose" class="goals">Loose</label>
-                <input type="radio" value="m" name="goals" id="maintain"><label for="maintain" class="goals">Maintain</label>
-                <input type="radio" value="g" name="goals" id="gain"><label for="gain" class="goals">Gain</label>
-            </div>
-        </div>
-
-        <input type="submit" id="calculate" name="calculate" value="Calculate Macros">
-        <div class="div_value hidden" id="result">
-            <div class="total">
-                <h3>Your BMR is:</h3>
-                <div class="calorie-value">
-                    <div class="number" id="bmr"></div>
-                    <div class="label">Calories/Day</div>
-                </div>
-            </div>
-            <div class="total">
-                <h3>Your TDEE is:</h3>
-                <div class="calorie-value">
-                    <div class="number" id="tdee"></div>
-                    <div class="label">Calories/Day</div>
-                </div>
+        <div class="total">
+            <h3>Your TDEE is:</h3>
+            <div class="calorie-value">
+                <div class="number" id="tdee"></div>
+                <div class="label">Calories/Day</div>
             </div>
         </div>
     </div>
-</form>
+
+    <div class="div_plan hidden">
+        <div class="step">
+            <div class="title">
+                <h3>Step 2: Choose Your Goals & Intensity</h3>
+            </div>
+            <div class="div_section div_goal">
+                <h4>Goal:</h4>
+                <select id="goal">
+                    <option value="0">Select One</option>
+                    <option value="loss">Fat Loss</option>
+                    <option value="maintain">Maintain</option>
+                    <option value="gain">Gain</option>
+                </select>
+                <select id="intensity-loss" class="hidden">
+                    <option value="0">Select One</option>
+                    <option value=".15">Moderate (15%)</option>
+                    <option value=".20">Standard (20%)</option>
+                    <option value=".25">Intensive (25%)</option>
+                </select>
+                <select id="intensity-gain" class="hidden">
+                    <option value="0">Select One</option>
+                    <option value=".5">Moderate (5%)</option>
+                    <option value=".10">Standard (10%)</option>
+                    <option value=".15">Intensive (15%)</option>
+                </select>
+            </div>
+        </div>
+        <div class="step">
+            <div class="title">
+                <h3>Step 3: Customize Your Nutrition Plan</h3>
+            </div>
+            <div class="div_nutrition">
+                <h4>Protein: <em>(4 Calories per Gram)</em></h4>
+                <div class="selection selection_protein">
+                    <input type="radio" value=".7" name="protein" id="protein_7"><label for="protein_7" class="goals">.7g per lb. of body weight</label>
+                    <input type="radio" value=".8" name="protein" id="protein_8"><label for="protein_8" class="goals">.8g per lb. of body weight</label>
+                    <input type="radio" value=".9" name="protein" id="protein_9"><label for="protein_9" class="goals">.9g per lb. of body weight</label>
+                </div>
+            </div>
+            <div class="div_nutrition">
+                <h4>Fat: <em>(9 Calories per Gram)</em></h4>
+                <div class="selection selection_fat">
+                    <input type="radio" value=".30" name="fat" id="fat_30"><label for="fat_30" class="goals">.30g per lb. of body weight</label>
+                    <input type="radio" value=".35" name="fat" id="fat_35"><label for="fat_35" class="goals">.35g per lb. of body weight</label>
+                    <input type="radio" value=".40" name="fat" id="fat_40"><label for="fat_40" class="goals">.40g per lb. of body weight</label>
+                </div>
+            </div>
+            <div class="div_nutrition">
+                <h4>Carbs: <em>(4 Calories per Gram)</em></h4>
+                <p>Carbohydrates are calculated based on the calories you have remaining after calories from protein and fat have been subtracted from your TDEE.</p>
+            </div>
+        </div>
+
+        <input type="submit" id="create_plan" class="calculate" name="calculate" value="Create Plan">
+
+        <div class="step hidden" id="div_plan">
+            <div class="title">
+                <h3>Your Plan</h3>
+            </div>
+            <table id="macro_results_table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Carbs</th>
+                        <th>Protein</th>
+                        <th>Fat</th>
+                        <th class="macro_calories">Calories</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-label="Grams per Day">
+                        <td>Grams per Day</td>
+                        <td id="carbs_per_day"></td>
+                        <td id="protein_per_day"></td>
+                        <td id="fat_per_day"></td>
+                        <td id="calories_per_day"  class="macro_calories"></td>
+                    </tr>
+                    <tr data-label="Grams per Meal">
+                        <td>Grams per Meal</td>
+                        <td id="carbs_per_meal"></td>
+                        <td id="protein_per_meal"></td>
+                        <td id="fat_per_meal"></td>
+                        <td id="calories_per_meal"  class="macro_calories"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <select id="meals">
+                <option value="1">1 Meal Per Day</option>
+                <option value="2">2 Meals Per Day</option>
+                <option value="3" selected="selected">3 Meals Per Day</option>
+                <option value="4">4 Meals Per Day</option>
+                <option value="5">5 Meals Per Day</option>
+                <option value="6">6 Meals Per Day</option>
+                <option value="7">7 Meals Per Day</option>
+            </select>
+        </div>
+    </div>
+</div>
+

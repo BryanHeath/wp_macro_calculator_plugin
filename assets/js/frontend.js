@@ -100,7 +100,7 @@ jQuery( document ).ready( function ( e ) {
             plan_tdee = tdee - (tdee * jQuery('#intensity-loss').val());
         } else if (goal == 'gain') {
             if (!jQuery('#intensity-gain').val() || jQuery('#intensity-gain').val() == 0) {
-                mc_error("A valid goal is required", "intensity-loss");
+                mc_error("A valid goal is required", "intensity-gain");
                 return;
             }
             plan_tdee = tdee + (tdee * jQuery('#intensity-gain').val());
